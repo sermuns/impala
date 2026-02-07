@@ -1,9 +1,9 @@
 #import "lib.typ": *
 
 #set page(
-  width: auto,
-  height: auto,
-  margin: (x: 10pt, top: 70pt, bottom: 25pt),
+  width: 318pt,
+  height: 148pt,
+  margin: 5pt,
   fill: none,
 )
 
@@ -11,22 +11,24 @@
   size: 75pt,
   font: font,
   fill: foreground,
+  top-edge: "bounds",
+  bottom-edge: "bounds",
 )
 
-#set align(center + horizon)
+#set align(right + bottom)
+
+impala
 
 #place(
-  center + horizon,
-  dx: 5pt,
-  dy: -50pt,
+  left + top,
   image(
-    "impala.svg",
-    height: 75pt,
+    bytes(
+      read("wifi-svgrepo-com.svg").replace(
+        "#000000",
+        foreground.to-hex(),
+      ),
+    ),
+    height: 1em,
   ),
 )
 
-#stack(
-  dir: ltr,
-  spacing: .5em,
-  [Impala],
-)
